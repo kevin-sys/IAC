@@ -10,7 +10,7 @@ terraform {
 }
 
 provider "aws" {
-  region  = "us-west-2"
+  region = "us-west-2"
 }
 
 resource "aws_instance" "app_server1" {
@@ -34,4 +34,7 @@ resource "aws_instance" "app_server2" {
 variable "username" {
   description = "Usuario de kevin Gómez Cantillo en AWS"
   default     = "kevin-sys"
+}
+module "myecr" {
+  source = "./modules/ecr"
 }
